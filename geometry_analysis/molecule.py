@@ -58,4 +58,14 @@ class Molecule:
 
 if __name__ == "__main__":
     # Do something if this file is invoked on its own
-    pass
+    random_coordinates = np.random.random([3, 3])
+    name = “my_molecule”
+    symbols = [“H”, “O”, “H”]
+    my_molecule = Molecule(name, symbols, random_coordinates)
+    print(F’There are {len(my_molecule.bonds)} bonds’)
+    print(F’The coordinates are {my_molecule.coordinates}‘)
+    random_coordinates[0] += 100
+    my_molecule.coordinates = random_coordinates
+    print(F’\n\nThere are {len(my_molecule.bonds)} bonds’)
+    print(F’The coordinates are {my_molecule.coordinates}’)
+
